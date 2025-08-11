@@ -1,5 +1,5 @@
 public class StringLength {
     public static int getStringLength(String s) {
-        return s.length();
+        return s.isEmpty() ? s.length() : 0;
     }
 }
