@@ -6,8 +6,8 @@ public class ComputeArray {
                 .map(e -> {
                     if (e % 3 == 0) {
                         return e * 5;
-                    } else if ((e - 1) % 3 == 0) {
-                        return e + 7;
+                    } else if (((e>0?e:-e) - 1) % 3 == 0) {
+                        return e + (e>0?7:-7);
                     } else {
                         return e;
                     }
