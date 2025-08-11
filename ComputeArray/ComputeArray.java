@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class ComputeArray {
     public static int[] computeArray(int[] array) {
-        return array == null ? new int[]{} : Arrays.stream(array)
+        return array == null ? null : Arrays.stream(array)
                 .map(e -> {
                     if (e % 3 == 0) {
                         return e * 5;
