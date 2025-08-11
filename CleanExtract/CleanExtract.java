@@ -18,6 +18,7 @@ public class CleanExtract {
                         return e;
                     }
                 })
+                .filter(e -> !e.trim().equals(""))
                 .toArray(String[]::new);
         return String.join(" ", splited);
     }
