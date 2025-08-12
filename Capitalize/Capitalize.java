@@ -11,7 +11,7 @@ public class Capitalize {
         }
         String[] content = Arrays.stream(Files.readString(Paths.get(args[0])).split(" "))
                 .filter(e -> !e.isEmpty())
-                .map(e -> e.substring(0, 1).toUpperCase() + e.substring(1))
+                .map(e -> e.substring(0, 1).toUpperCase() + e.substring(1).toLowerCase())
                 .toArray(String[]::new);
         Files.writeString(Paths.get(args[1]), String.join(" ", content));
     }
