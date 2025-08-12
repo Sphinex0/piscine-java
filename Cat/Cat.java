@@ -5,7 +5,11 @@ import java.nio.file.Paths;
 
 public class Cat {
     public static void cat(String[] args) throws IOException {
-        System.out.print(args.length == 0 ? "" : new String(Files.readAllBytes(Paths.get(args[0])))); 
-        // System.out.print(args.length == 0 ? "" :Files.readAllBytes(Paths.get(args[0])));
+        // System.out.print(args.length == 0 ? "" : new String(Files.readAllBytes(Paths.get(args[0])))); 
+        if (args.length == 0) {
+            System.out.print("");
+            return;
+        }
+        System.out.write(Files.readAllBytes(Paths.get(args[0])));
     }
 }
