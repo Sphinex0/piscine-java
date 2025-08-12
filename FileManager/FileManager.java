@@ -8,7 +8,7 @@ public class FileManager {
     }
 
     public static String getContentFile(String fileName) throws IOException {
-        Files.readString(Paths.get(fileName));
+        return Files.readString(Paths.get(fileName));
     }
 
     public static void deleteFile(String fileName) {
