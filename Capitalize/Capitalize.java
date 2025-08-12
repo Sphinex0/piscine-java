@@ -10,9 +10,9 @@ public class Capitalize {
             return;
         }
         String[] content = Arrays.stream(Files.readString(Paths.get(args[0])).split(" "))
+                .filter(e -> !e.isEmpty())
                 .map(e -> e.substring(0, 1).toUpperCase() + e.substring(1))
                 .toArray(String[]::new);
-        // String output = String.join(" ",content).toArray());
-         Files.writeString(Paths.get(args[1]),String.join(" ",content));
+        Files.writeString(Paths.get(args[1]), String.join(" ", content));
     }
 }
