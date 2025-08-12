@@ -11,7 +11,7 @@ public class FileManager {
         return Files.readString(Paths.get(fileName));
     }
 
-    public static void deleteFile(String fileName) {
+    public static void deleteFile(String fileName) throws IOException {
         Files.deleteIfExists(Paths.get(fileName));
     }
 }
