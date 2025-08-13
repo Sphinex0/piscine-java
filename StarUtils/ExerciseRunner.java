@@ -7,6 +7,9 @@ public class ExerciseRunner {
         CelestialObject celestialObject1 = new CelestialObject("Altair", 12.45, 328.8437, -328.3923);
         CelestialObject celestialObject2 = new CelestialObject("Altair", 12.45, 328.8437, -328.3923);
         CelestialObject celestialObject3 = new CelestialObject("Altair", 12.46, 328.8437, -328.3923);
+        CelestialObject celestialObject4 = new CelestialObject("Altair", 12.45, 328.844, -328.3923);
+        CelestialObject celestialObject5 = new CelestialObject("Altair", 12.45, 328.8437, -328.4);
+        CelestialObject celestialObject6 = new CelestialObject("Deneb", 12.45, 328.8437, -328.3923);
 
         // System.out.println(earth.toString());
         // System.out.println(earth.equals(earth1));
