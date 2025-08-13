@@ -4,7 +4,7 @@ public class CelestialObject {
     private double y;
     private double z;
     private String name;
-    private double mass;
+    private int mass;
 
     static final double KM_IN_ONE_AU = 150_000_000;
 
@@ -12,7 +12,7 @@ public class CelestialObject {
         name = "Soleil";
     }
 
-    public CelestialObject(String name1, double x1, double y1, double z1, double mass1) {
+    public CelestialObject(String name1, double x1, double y1, double z1, int mass1) {
         x = x1;
         y = y1;
         z = z1;
@@ -20,7 +20,7 @@ public class CelestialObject {
         name = name1;
     }
 
-    public double getMass() {
+    public int getMass() {
         return mass;
     }
 
@@ -40,7 +40,7 @@ public class CelestialObject {
         return name;
     }
 
-    public void setMass(double mass) {
+    public void setMass(int mass) {
         this.mass = mass;
     }
 
