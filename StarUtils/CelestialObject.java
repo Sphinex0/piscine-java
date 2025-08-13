@@ -69,7 +69,8 @@ public class CelestialObject {
     }
 
     public int hashCode() {
-        return (int) (x + y + z +name.hashCode());
+        // System.err.println("======>"+((x + y + z + name.hashCode())*10));
+        return (int) (((x + y + z + name.hashCode())*1000)%10000000);
     }
 
 }
