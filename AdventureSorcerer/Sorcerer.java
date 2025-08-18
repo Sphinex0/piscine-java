@@ -14,16 +14,16 @@ public class Sorcerer extends Character implements Healer {
 
     @Override
     public void heal(Character ch) {
-        if (ch.currentHealth + this.healCapacity >= ch.getMaxHealth()) {
-            ch.currentHealth = ch.getMaxHealth();
+        if (ch.getCurrentHealth() + this.healCapacity >= ch.getMaxHealth()) {
+            ch.setCurrentHealth(ch.getMaxHealth()); 
         } else {
-            ch.currentHealth += this.healCapacity;
+            ch.setCurrentHealth((ch.getCurrentHealth() + this.healCapacity));
         }
     }
 
     @Override
     public String toString() {
-        return currentHealth == 0
+        return getCurrentHealth() == 0
                 ? String.format("%s is a dead sorcerer. So bad, it could heal %d HP.", getName(), getHealCapacity())
                 : String.format("%s is a sorcerer with %d HP. It can heal %d HP.", getName(), getCurrentHealth(),
                         getHealCapacity());
