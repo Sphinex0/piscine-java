@@ -54,7 +54,7 @@ public class Character {
             String res = "------------------------------------------\n" +
                     "Characters currently fighting :\n";
             for (Character ch : allCharacters) {
-                res += "- " + ch.toString() + "\n";
+                res += " - " + ch.toString() + "\n";
             }
             res += "------------------------------------------";
             return res;
