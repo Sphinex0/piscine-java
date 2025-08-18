@@ -1,4 +1,3 @@
-package AdventureSorcerer;
 
 public class Sorcerer extends Character implements Healer {
     int healCapacity;
@@ -15,10 +14,10 @@ public class Sorcerer extends Character implements Healer {
 
     @Override
     public void heal(Character ch) {
-        if (this.currentHealth + healCapacity > getMaxHealth()) {
-            this.currentHealth = getMaxHealth();
+        if (ch.currentHealth + healCapacity >= getMaxHealth()) {
+            ch.currentHealth = getMaxHealth();
         } else {
-            this.currentHealth += healCapacity;
+            ch.currentHealth += healCapacity;
         }
     }
 
