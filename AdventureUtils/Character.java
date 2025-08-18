@@ -66,11 +66,14 @@ public class Character {
     }
 
     public static Character fight(Character ch1, Character ch2) {
-        while (ch1.currentHealth != 0 || ch2.currentHealth != 0) {
+        while (true) {
             ch1.attack(ch2);
             if (ch2.currentHealth == 0)
                 break;
             ch2.attack(ch1);
+            if (ch1.currentHealth == 0)
+                break;
+
         }
 
         return ch1.currentHealth == 0 ? ch2 : ch1;
