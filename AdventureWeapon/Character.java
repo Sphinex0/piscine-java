@@ -30,6 +30,10 @@ public abstract class Character {
         return name;
     }
 
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
     // setters
     protected void setCurrentHealth(int currentHealth) {
         this.currentHealth = currentHealth;
