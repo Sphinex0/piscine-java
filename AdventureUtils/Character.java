@@ -56,7 +56,7 @@ public class Character {
             for (Character ch : allCharacters) {
                 res += "- " + ch.toString() + "\n";
             }
-            res += "------------------------------------------\n";
+            res += "------------------------------------------";
             return res;
         } else {
             return "------------------------------------------\nNobody's fighting right now !\n------------------------------------------\n";
