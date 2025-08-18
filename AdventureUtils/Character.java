@@ -49,16 +49,19 @@ public class Character {
     }
 
     public static String printStatus() {
-        if (allCharacters.size() == 0) {
-            return "------------------------------------------\nNobody's fighting right now !\n------------------------------------------\n";
+
+        if (allCharacters != null && allCharacters.size() != 0) {
+            String res = "------------------------------------------\n" +
+                    "Characters currently fighting :\n";
+            for (Character ch : allCharacters) {
+                res += "- " + ch.toString() + "\n";
+            }
+            res += "------------------------------------------";
+            return res;
+        } else {
+            return "------------------------------------------\nNobody's fighting right now !\n------------------------------------------";
+
         }
-        String result = "------------------------------------------\n";
-        result += "Characters currently fighting :\n";
-        for (Character ch : Character.allCharacters) {
-            result += String.format(" - %s\n", ch.toString());
-        }
-        result += "------------------------------------------\n";
-        return result;
     }
 
     public static Character fight(Character ch1, Character ch2) {
