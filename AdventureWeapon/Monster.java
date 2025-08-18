@@ -8,7 +8,7 @@ public class Monster extends Character {
     @Override
     public String toString() {
         return (super.getCurrentHealth() == 0 ? String.format("%s is a monster and is dead", super.getName())
-                : String.format("%s is a monster with %d HP", super.getName(), super.getCurrentHealth()))+" He has the weapon "+ weapon.name;
+                : String.format("%s is a monster with %d HP", super.getName(), super.getCurrentHealth()))+" He has the weapon "+ getWeapon().getName();
     }
 
     @Override
@@ -25,6 +25,6 @@ public class Monster extends Character {
 
     @Override
     public void attack(Character ch) {
-        ch.takeDamage(this.weapon == null ? 7 : this.weapon.damage);
+        ch.takeDamage(this.getWeapon() == null ? 7 : this.getWeapon().getDamage());
     }
 }
