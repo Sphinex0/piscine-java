@@ -6,6 +6,6 @@ public class StreamReduce {
     }
 
     public static Integer divideAndAddElements(Stream<Integer> s, int divider) {
-        return s.reduce(0,(a,b)->a/divider +b/divider, Integer::sum);
+        return s.reduce(0,(a,b)->a + b/divider);
     }
 }
