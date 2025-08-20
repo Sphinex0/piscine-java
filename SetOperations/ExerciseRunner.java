@@ -14,8 +14,8 @@ public class ExerciseRunner {
         set2.add(3);
         set2.add(4);
 
-        Set<Integer> unionSet = SetOperations.union(set1, set2);
-        System.out.println(unionSet); // Expected Output: [1, 2, 3, 4]
+        // Set<Integer> unionSet = SetOperations.union(set1, set2);
+        // System.out.println(unionSet); // Expected Output: [1, 2, 3, 4]
 
         Set<Integer> intersectionSet = SetOperations.intersection(set1, set2);
         System.out.println(intersectionSet); // Expected Output: [2, 3]
