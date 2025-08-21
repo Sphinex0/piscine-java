@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,15 +18,15 @@ public class WeddingComplex {
                         String otherHusband = findKeyByValue(result, pref);
                         if (second.get(pref).indexOf(key) < second.get(pref).indexOf(otherHusband)) {
                             result.put(key, pref);
-                            first.get(otherHusband).remove(pref);
-                            result.remove(otherHusband);
+                            int indexOfpre = first.get(otherHusband).indexOf(pref) ;
+                            result.replace(otherHusband, first.get(otherHusband).get(indexOfpre+1));
                         }
                     }
 
                 }
             }
             // if (counter >500){
-            //     break;
+            // break;
             // }
         }
 
