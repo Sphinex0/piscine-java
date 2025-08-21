@@ -7,27 +7,30 @@ public class WeddingComplex {
     public static Map<String, String> createBestCouple(Map<String, List<String>> first,
             Map<String, List<String>> second) {
         Map<String, String> result = new HashMap<>();
-        // int counter = 0;
-        while (result.size() < first.size()) {
-            // counter++;
-            for (String key : first.keySet()) {
-                for (String pref : first.get(key)) {
-                    if (!result.containsValue(pref)) {
-                        result.put(key, pref);
-                    } else {
-                        String otherHusband = findKeyByValue(result, pref);
-                        if (second.get(pref).indexOf(key) < second.get(pref).indexOf(otherHusband)) {
-                            result.put(key, pref);
-                            int indexOfpre = first.get(otherHusband).indexOf(pref) ;
-                            result.replace(otherHusband, first.get(otherHusband).get(indexOfpre+1));
-                        }
-                    }
 
+        for (String key : first.keySet()) {
+            for (String pref : first.get(key)) {
+                if (!result.containsValue(pref)) {
+                    result.put(key, pref);
+                    break;
+                } else {
+                    String otherHusband = findKeyByValue(result, pref);
+                    if (second.get(pref).indexOf(key) < second.get(pref).indexOf(otherHusband)) {
+                        result.put(key, pref); 
+                        result.remove(otherHusband);
+                        
+                        for (String newPref : first.get(otherHusband)) {
+                            if (!result.containsValue(newPref)) {
+                                result.put(otherHusband, newPref);
+                                break;
+                            }
+                        }
+                        break;
+                    }
                 }
             }
-            // if (counter >500){
-            // break;
-            // }
+            // System.out.println(result);
+            // System.out.println(first.get(key));
         }
 
         return result;
