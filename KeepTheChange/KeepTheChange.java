@@ -8,9 +8,7 @@ public class KeepTheChange {
         List<Integer> coin = new ArrayList<>(coins);
         Collections.sort(coin);
         Collections.reverse(coin);
-        
         List<Integer> res = new ArrayList<>();
-
         for (int c : coin) {
             while (c <= amount && amount > 0) {
                     amount -= c;
