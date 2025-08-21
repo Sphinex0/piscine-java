@@ -6,9 +6,9 @@ public class WeddingComplex {
     public static Map<String, String> createBestCouple(Map<String, List<String>> first,
             Map<String, List<String>> second) {
         Map<String, String> result = new HashMap<>();
-        int counter = 0;
+        // int counter = 0;
         while (result.size() < first.size()) {
-            counter++;
+            // counter++;
             for (String key : first.keySet()) {
                 for (String pref : first.get(key)) {
                     if (!result.containsValue(pref)) {
@@ -17,15 +17,16 @@ public class WeddingComplex {
                         String otherHusband = findKeyByValue(result, pref);
                         if (second.get(pref).indexOf(key) < second.get(pref).indexOf(otherHusband)) {
                             result.put(key, pref);
+                            first.get(otherHusband).remove(pref);
                             result.remove(otherHusband);
                         }
                     }
 
                 }
             }
-            if (counter >500){
-                break;
-            }
+            // if (counter >500){
+            //     break;
+            // }
         }
 
         return result;
