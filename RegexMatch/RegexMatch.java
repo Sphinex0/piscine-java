@@ -2,7 +2,7 @@ import java.util.regex.Pattern;
 
 public class RegexMatch {
     public static boolean containsOnlyAlpha(String s) {
-        return Pattern.matches("\\w+", s);
+        return Pattern.matches("\\p{Alpha}+", s);
     }
     
     public static boolean startWithLetterAndEndWithNumber(String s) {
