@@ -19,12 +19,9 @@ public class ParseDate {
 
     public static LocalTime parseTimeFormat(String stringDate) {
         if (stringDate == null)return null;
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("H 'heures du soir,' mm 'minutes et' ss 'secondes'",
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh 'heures' B',' mm 'minutes et' ss 'secondes'",
                 Locale.FRENCH);
-        if (stringDate.contains("heures du soir")) {
-            return LocalTime.parse(stringDate, formatter).plusHours(12);
 
-        }
         return LocalTime.parse(stringDate, formatter);
     }
 
