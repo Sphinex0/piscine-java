@@ -7,7 +7,7 @@ public class RegexMatch {
     
     public static boolean startWithLetterAndEndWithNumber(String s) {
         // your code here
-        return Pattern.matches("\\w.*\\d", s);
+        return Pattern.matches("\\p{Alpha}.*\\d", s);
     }
     
     public static boolean containsAtLeast3SuccessiveA(String s) {
