@@ -17,10 +17,11 @@ public class ParseDate {
     }
 
     public static LocalTime parseTimeFormat(String stringDate) {
+    
         // "09 heures du soir, 07 minutes et 23 secondes"
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("H 'heures du soir,' mm 'minutes et' ss 'secondes'",
                 Locale.FRENCH);
-        if (stringDate.contains("heures du soir")) {
+        if (stringDate != null && stringDate.contains("heures du soir")) {
             return LocalTime.parse(stringDate, formatter).plusHours(12);
 
         }
